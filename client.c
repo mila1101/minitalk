@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:30:20 by msoklova          #+#    #+#             */
-/*   Updated: 2024/07/26 15:36:56 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/07/26 18:16:09 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	send_message(char *str, pid_t pid)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(200);
+			usleep(50);
 			i--;
 		}
 	}
@@ -42,7 +42,7 @@ void	send_message(char *str, pid_t pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(200);
+		usleep(100);
 		i--;
 	}
 }
