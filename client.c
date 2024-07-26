@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:30:20 by msoklova          #+#    #+#             */
-/*   Updated: 2024/07/26 14:12:40 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/07/26 15:36:56 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,17 @@ void	send_message(char *str, pid_t pid)
 			usleep(200);
 			i--;
 		}
+	}
+	c = '\0';
+	i = 7;
+	while (i >= 0)
+	{
+		if (((c >> i) & 1) == 0)
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		usleep(200);
+		i--;
 	}
 }
 
