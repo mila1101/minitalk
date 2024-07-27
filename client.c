@@ -6,7 +6,7 @@
 /*   By: msoklova <msoklova@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:30:20 by msoklova          #+#    #+#             */
-/*   Updated: 2024/07/27 16:44:13 by msoklova         ###   ########.fr       */
+/*   Updated: 2024/07/27 17:11:57 by msoklova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		if (pid_checker(argv[1]) == 0)
+		if (argc == 3 && (pid_checker(argv[1]) == 0))
 			write(1, "WRONG PID, DIGITS ONLY!!!", 25);
 		write(1, "\nHow to use: \n", 14);
 		write(1, "	./client <PID> <string>\n", 25);
